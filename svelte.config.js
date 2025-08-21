@@ -1,8 +1,7 @@
-import adapter from '@sveltejs/adapter-cloudflare';
-
-/** @type {import('@sveltejs/kit').Config} */
+import adapter from '@sveltejs/adapter-static';
 const config = {
-  kit: { adapter: adapter() }
+  kit: {
+    adapter: adapter({ fallback: 'index.html' }) // SPA fallback
+  }
 };
 export default config;
-
